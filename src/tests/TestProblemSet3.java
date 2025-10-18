@@ -218,6 +218,23 @@ public class TestProblemSet3 {
         assertFalse(ProblemSet3.isBST(root, new IntInverseDistanceFromReference(8)));
         assertTrue(ProblemSet3.isBST(root, new IntInverseDistanceFromReference(-100)));
         assertFalse(ProblemSet3.isBST(root, new IntInverseDistanceFromReference(6)));
+
+        // break the tree
+        root.getLeft().getRight().setValue(-2);
+        /*
+         *          0
+         *        /   \
+         *      5      -5
+         *     / \       \
+         *   10   -2      -10
+         *  /    /        / \
+         * 12   4       -7  -14
+         *  \                /
+         *   11            -11
+         *
+         */
+        assertFalse(ProblemSet3.isBST(root, new IntDecreasing()));
+        assertFalse(ProblemSet3.isBST(root, new IntInverseDistanceFromReference(-100)));
     }
 
 
