@@ -1,10 +1,10 @@
 package problem;
 
 public class Song extends Media {
-    private int duration;
+    private double duration;
     private double playbackTime = 0.0;
 
-    public Song(String title, int duration) {
+    public Song(String title, double duration) {
         super(title);
         this.duration = duration;
     }
